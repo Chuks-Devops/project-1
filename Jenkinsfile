@@ -26,7 +26,7 @@ pipeline {
         }
         stage("Sonarqube Analysis") {
             steps {
-                withSonarQubeEnv('SonarQube-Server') {
+                withSonarQubeEnv('sonarscanner') {
                     sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=redit-clone-ci-setup \
                   -Dsonar.projectKey=redit-clone-ci-setup'''
                 }
